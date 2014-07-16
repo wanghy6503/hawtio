@@ -241,10 +241,11 @@ module Osgi {
         required: required,
         properties: properties
       };
-      var inputClass = "span12";
+      $scope.schema = schema;
+      var inputClass = "col-md-12";
       var labelClass = "control-label";
 
-      //var inputClassArray = "span11";
+      //var inputClassArray = "col-md-11";
       var inputClassArray = "";
       var labelClassArray = labelClass;
 
