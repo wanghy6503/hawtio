@@ -41,16 +41,12 @@ module Core {
   /**
    * The main hawtio core App module
    */
-  export var _module = angular.module(Core.pluginName, ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngResource', /*'ui', */'ui.bootstrap.dialog', 'hawtio-ui']);
+  export var _module = angular.module(Core.pluginName, ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngResource', /*'ui', */'ui.bootstrap.modal', 'hawtio-ui']);
 
   // configure the module
-  _module.config(["$locationProvider", "$routeProvider", "$dialogProvider", ($locationProvider: ng.ILocationProvider, $routeProvider:ng.route.IRouteProvider, $dialogProvider) => {
-    $locationProvider.html5Mode(true);
-
-    $dialogProvider.options({
-      backdropFade: true,
-      dialogFade: true
-    });
+  _module.config(["$locationProvider", "$routeProvider", "$modalProvider", ($locationProvider: ng.ILocationProvider, $routeProvider:ng.route.IRouteProvider, $dialogProvider) => {
+    $dialogProvider.options.backdrop = true;
+    $dialogProvider.options.keyboard = true;
 
     $routeProvider.
             when('/login', {templateUrl: Core.templatePath + 'login.html'}).

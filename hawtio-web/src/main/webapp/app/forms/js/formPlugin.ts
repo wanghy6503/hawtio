@@ -9,7 +9,7 @@ module Forms {
   export var pluginName = 'hawtio-forms';
   export var templateUrl = 'app/forms/html/';
 
-  export var _module = angular.module(Forms.pluginName, ['ngRoute', 'ui.bootstrap', 'ngResource', 'hawtioCore', 'datatable', 'ui.bootstrap', 'ui.bootstrap.dialog', 'hawtio-ui']);
+  export var _module = angular.module(Forms.pluginName, ['ngRoute', 'ui.bootstrap', 'ngResource', 'hawtioCore', 'datatable', 'ui.bootstrap', 'ui.bootstrap.modal', 'hawtio-ui']);
 
   _module.config(["$routeProvider", ($routeProvider) => {
     $routeProvider.
