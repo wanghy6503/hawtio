@@ -587,7 +587,7 @@ module Core {
    * @param {*} $scope
    */
   export function $apply($scope:ng.IScope) {
-    var phase = $scope.$$phase || $scope.$root.$$phase;
+    var phase = $scope.$$phase/* || $scope.$root.$$phase*/;
     if (!phase) {
       $scope.$apply();
     }
