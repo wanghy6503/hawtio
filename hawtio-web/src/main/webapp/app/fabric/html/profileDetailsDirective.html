@@ -48,7 +48,7 @@
 
       <div class="col-md-3">
 
-        <ul class="unstyled switches">
+        <ul class="list-unstyled switches">
           <li>
             <div class="switch-container" title="Abstract profiles cannot be directly instantiated; they must be inherited by other profiles.
 
@@ -81,7 +81,7 @@ So they are for implementation inheritance rather like Abstract Base Classes in 
         <dl>
           <dt>Parents:</dt>
           <dd>
-            <ul class="unstyled">
+            <ul class="list-unstyled">
               <li ng-repeat="profile in row.parentIds">
                 <i class="red clickable icon-remove" title="Remove parent {{profile}}" ng-click="removeParentProfile(profile)"></i>
                 <a href="#/wiki/branch/{{versionId}}/view/fabric/profiles/{{profilePath(profile)}}{{hash}}">{{profile}}</a>
@@ -95,7 +95,7 @@ So they are for implementation inheritance rather like Abstract Base Classes in 
         <dl ng-show="row.childIds.length > 0">
           <dt>Children:</dt>
           <dd>
-            <ul class="unstyled">
+            <ul class="list-unstyled">
               <li ng-repeat="profile in row.childIds">
                 <a href="#/wiki/branch/{{versionId}}/view/fabric/profiles/{{profilePath(profile)}}{{hash}}">{{profile}}</a>
               </li>
@@ -108,7 +108,7 @@ So they are for implementation inheritance rather like Abstract Base Classes in 
       <div class="col-md-9 deployment-pane">
         <div>
           <h3>Deployments</h3>
-          <ul class="unstyled">
+          <ul class="list-unstyled">
             <li class="add">
               <div>
                 <form ng-submit="addNewThing('Bundle', 'Bundles', row.bundles)">
@@ -131,7 +131,7 @@ So they are for implementation inheritance rather like Abstract Base Classes in 
         </div>
         <div>
           <h4>Artifacts ({{row.bundles.length + row.fabs.length}})</h4>
-          <ul class="unstyled">
+          <ul class="list-unstyled">
             <li ng-repeat="bundle in row.bundles">
               <i class="red clickable icon-remove" title="Delete {{bundle}}"
                  ng-click="deleteThing('Bundle', 'Bundles', row.bundles, bundle)"></i>
