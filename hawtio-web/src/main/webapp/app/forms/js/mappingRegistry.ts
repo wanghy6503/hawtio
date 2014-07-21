@@ -62,6 +62,10 @@ module Forms {
 
       input.attr('name', id);
 
+      if (propTypeName !== "java.lang.Boolean") {
+        input.addClass("form-control");
+      }
+
       try {
         if (config.isReadOnly()) {
           input.attr('readonly', 'true');
@@ -89,6 +93,7 @@ module Forms {
         var labelText = property.title || property.label ||
           (disableHumanizeLabelValue ? defaultLabel : Core.humanizeValue(defaultLabel));
         var labelElement = Forms.getLabel(config, config, labelText);
+        labelElement.addClass("col-md-4");
         if (title) {
           labelElement.attr('title', title);
         }
@@ -96,6 +101,12 @@ module Forms {
         copyElementAttributes(labelElement, "label-attributes");
 
         var controlDiv = Forms.getControlDiv(config);
+        controlDiv.addClass("col-md-6");
+        if (propTypeName === "java.lang.Boolean") {
+          // hack!
+          controlDiv.attr("style", "display: table-cell");
+          input.attr("style", "vertical-align: middle");
+        }
         controlDiv.append(input);
         controlDiv.append(Forms.getHelpSpan(config, config, id));
 
