@@ -38,15 +38,15 @@ module UI {
       });
       observe($scope, $attrs, 'title', '');
 
-      $scope.$watch('show', function() {
-        if ($scope.show) {
-          $scope.body = $element.find('.slideout-body');
-          $scope.body.html($compile($scope.clone.html())($scope.$parent));
-        }
-      });
+//      $scope.$watch('show', function() {
+//        if ($scope.show) {
+//          $scope.body = $element.find('.slideout-body');
+//          $scope.body.html($compile($scope.clone.html())($scope.$parent));
+//        }
+//      });
     }];
 
-    public link = ($scope, $element, $attrs) => {
+    public link = ($scope, $element, $attrs, ctrl, $transclude) => {
       $scope.element = $($element);
 
       $scope.element.bind("keydown", function(ev) {
@@ -63,6 +63,10 @@ module UI {
 
       $scope.$watch('show', function() {
         if ($scope.show) {
+          $scope.body = $element.find('.slideout-body');
+          $transclude(function(content) {
+            $scope.body.html(content);
+          });
           $scope.element.addClass('out');
           $scope.element.focus();
         } else {
