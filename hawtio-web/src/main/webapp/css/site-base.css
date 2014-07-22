@@ -1065,7 +1065,7 @@ li.stacktrace {
 /* slideout directive stuff */
 .slideout {
   position: fixed;
-  z-index: 3000;
+  z-index: 1030;
   width: 75%;
 }
 

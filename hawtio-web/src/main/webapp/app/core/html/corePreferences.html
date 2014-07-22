@@ -5,7 +5,7 @@
       <label class="control-label col-md-2">Welcome page</label>
 
       <div class="controls col-md-5">
-        <input type="checkbox" class="form-control" ng-model="showWelcomePage">
+        <input type="checkbox" ng-model="showWelcomePage">
         <span class="help-block">Show welcome page on startup</span>
       </div>
     </div>
@@ -32,7 +32,7 @@
       <label class="control-label col-md-2">Host identification</label>
 
       <div class="controls col-md-5">
-        <button class="btn form-control" ng-click="addRegexDialog.open()" title="Add regex"><i class="icon-plus"></i></button>
+        <button class="btn" ng-click="addRegexDialog.open()" title="Add regex"><i class="icon-plus"></i></button>
         <table ng-show="regexs.length">
           <thead>
             <tr>
