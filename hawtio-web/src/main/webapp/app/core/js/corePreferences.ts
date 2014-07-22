@@ -5,7 +5,7 @@
 /// <reference path="preferenceHelpers.ts"/>
 module Core {
 
-  _module.controller("Core.CorePreferences", ["$scope", "localStorage", ($scope, localStorage) => {
+  export var CorePreferences = _module.controller("Core.CorePreferences", ["$scope", "localStorage", ($scope, localStorage) => {
 
     Core.initPreferenceScope($scope, localStorage, {
       'updateRate': {

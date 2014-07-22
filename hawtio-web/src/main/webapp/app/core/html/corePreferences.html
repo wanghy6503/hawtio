@@ -2,19 +2,19 @@
   <form class="form-horizontal">
 
     <div class="form-group">
-      <label class="control-label">Welcome page</label>
+      <label class="control-label col-md-2">Welcome page</label>
 
-      <div class="controls">
-        <input type="checkbox" ng-model="showWelcomePage">
+      <div class="controls col-md-5">
+        <input type="checkbox" class="form-control" ng-model="showWelcomePage">
         <span class="help-block">Show welcome page on startup</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label" for="updateRate">Update rate</label>
+      <label class="control-label col-md-2" for="updateRate">Update rate</label>
 
-      <div class="controls">
-        <select id="updateRate" ng-model="updateRate">
+      <div class="controls col-md-5">
+        <select id="updateRate" class="form-control" ng-model="updateRate">
           <option value="0">No refreshes</option>
           <option value="1000">1 second</option>
           <option value="2000">2 seconds</option>
@@ -23,48 +23,48 @@
           <option value="30000">30 seconds</option>
         </select>
         <span class="help-block">How frequently the data is updated in the browser
-          <br/><i class='yellow text-shadowed icon-warning-sign'></i> <strong>Note:</strong> Setting this to "No Refreshes" will disable charting, as charting requires fetching periodic metric updates.
+          <br /><i class='yellow text-shadowed icon-warning-sign'></i> <strong>Note:</strong> Setting this to "No Refreshes" will disable charting, as charting requires fetching periodic metric updates.
         </span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label">Host identification</label>
+      <label class="control-label col-md-2">Host identification</label>
 
-      <div class="controls">
-        <button class="btn" ng-click="addRegexDialog.open()" title="Add regex"><i class="icon-plus"></i></button>
+      <div class="controls col-md-5">
+        <button class="btn form-control" ng-click="addRegexDialog.open()" title="Add regex"><i class="icon-plus"></i></button>
         <table ng-show="regexs.length">
           <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Regex</th>
-            <th></th>
-          </tr>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Regex</th>
+              <th></th>
+            </tr>
           </thead>
           <tbody>
-          <tr ng-repeat='regex in regexs track by $index'>
-            <td>
-              <i class="icon-remove clickable" ng-click="delete($index)"></i>
-              <i class="icon-caret-up clickable" ng-hide="$first" ng-click="moveUp($index)"></i>
-              <i class="icon-caret-down clickable" ng-hide="$last" ng-click="moveDown($index)"></i>
-            </td>
-            <td>
-              {{regex.name}}
-              <!--
-              <editable-property class="inline-block" ng-model="regex" property="name"></editable-property>
+            <tr ng-repeat='regex in regexs track by $index'>
+              <td>
+                <i class="icon-remove clickable" ng-click="delete($index)"></i>
+                <i class="icon-caret-up clickable" ng-hide="$first" ng-click="moveUp($index)"></i>
+                <i class="icon-caret-down clickable" ng-hide="$last" ng-click="moveDown($index)"></i>
+              </td>
+              <td>
+                {{regex.name}}
+                <!--
+                <editable-property class="inline-block" ng-model="regex" property="name"></editable-property>
+                -->
+              </td>
+              <td>
+                {{regex.regex}}
+                <!--
+                <editable-property class="inline-block" ng-model="regex" property="regex"></editable-property>
               -->
-            </td>
-            <td>
-              {{regex.regex}}
-              <!--
-              <editable-property class="inline-block" ng-model="regex" property="regex"></editable-property>
-            -->
-            </td>
-            <td>
-              <div hawtio-color-picker='regex.color'></div>
-            </td>
-          </tr>
+              </td>
+              <td>
+                <div hawtio-color-picker='regex.color'></div>
+              </td>
+            </tr>
           </tbody>
         </table>
 
@@ -76,12 +76,12 @@
           </div>
           <div class="modal-footer">
             <button class="btn btn-danger"
-                    ng-click="addRegexDialog.close()">
+                ng-click="addRegexDialog.close()">
               <i class="icon-remove"></i> Cancel
             </button>
             <button class="btn btn-primary"
-                    hawtio-submit="hostRegexForm"
-                    ng-disabled="!forms.hostRegexForm.$valid">
+                hawtio-submit="hostRegexForm"
+                ng-disabled="!forms.hostRegexForm.$valid">
               <i class="icon-plus"></i> Add
             </button>
           </div>

@@ -4348,3 +4348,16 @@ ul.dynatree-container {
 body div div ul.nav {
   margin: 0;
 }
+
+.slideout-body .prefs .nav.nav-pills {
+  top: 5px;
+  bottom: 5px;
+  left: 0;
+  width: 130px;
+  position: absolute;
+  margin: 0;
+  overflow-y: auto;
+}
+.slideout-body .prefs .nav.nav-pills a {
+  cursor: pointer;
+}
