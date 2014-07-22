@@ -47,8 +47,13 @@ module UI {
     }];
 
     public link = ($scope, $element, $attrs) => {
-
       $scope.element = $($element);
+
+      $scope.element.bind("keydown", function(ev) {
+        if (ev.which == 27) {
+          $scope.show = false;
+        }
+      });
 
       $scope.element.blur(function() {
         $scope.show = false;
@@ -64,12 +69,7 @@ module UI {
           $scope.element.removeClass('out');
         }
       });
-
-
     };
-
-
-
   }
 
 }

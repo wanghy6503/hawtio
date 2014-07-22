@@ -4,10 +4,10 @@
 /// <reference path="corePlugin.ts"/>
 module Core {
 
-  _module.controller("Core.PreferencesController", ["$scope", "$location", "workspace", "preferencesRegistry", "$element", ($scope, $location, workspace, preferencesRegistry, $element) => {
+  export var PreferencesController = _module.controller("Core.PreferencesController",["$scope", "$location", "workspace", "preferencesRegistry", "$element", ($scope, $location, workspace, preferencesRegistry, $element) => {
 
     Core.bindModelToSearchParam($scope, $location, "pref", "pref", "Core");
-    $scope.panels = {}
+    $scope.panels = {};
 
     $scope.$watch(() => { return $element.is(':visible'); }, (newValue, oldValue) => {
       if (newValue) {
@@ -18,5 +18,7 @@ module Core {
         }, 50);
       }
     });
+
   }]);
+
 }
