@@ -1,36 +1,28 @@
 <div ng-controller="ActiveMQ.PreferencesController">
   <form class="form-horizontal">
     <div class="form-group">
-      <label class="control-label" for="activemqUserName"
-             title="The user name to be used when connecting to the broker">User name</label>
-
-      <div class="controls">
-        <input id="activemqUserName" type="text" placeholder="username" ng-model="activemqUserName" autofill/>
+      <label class="control-label col-md-2" for="activemqUserName" title="The user name to be used when connecting to the broker">User name</label>
+      <div class="controls col-md-5">
+        <input id="activemqUserName" class="form-control" type="text" placeholder="username" ng-model="activemqUserName" autofill />
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label" for="activemqPassword" title="Password to be used when connecting to the broker">Password</label>
-
-      <div class="controls">
-        <input id="activemqPassword" type="password" placeholder="password" ng-model="activemqPassword" autofill/>
+      <label class="control-label col-md-2" for="activemqPassword" title="Password to be used when connecting to the broker">Password</label>
+      <div class="controls col-md-5">
+        <input id="activemqPassword" class="form-control" type="password" placeholder="password" ng-model="activemqPassword" autofill />
       </div>
     </div>
-
     <div class="form-group">
-      <label class="control-label">Filter advisory topics</label>
-
-      <div class="controls">
+      <label class="control-label col-md-2">Filter advisory topics</label>
+      <div class="controls col-md-5">
         <input type="checkbox" ng-model="activemqFilterAdvisoryTopics">
         <span class="help-block">Whether to exclude advisory topics in tree/table</span>
       </div>
-
     </div>
-
     <div class="form-group">
-      <label class="control-label" for="byteMessages">Browse byte messages</label>
-
-      <div class="controls">
-        <select id="byteMessages" ng-model="activemqBrowseBytesMessages">
+      <label class="control-label col-md-2" for="byteMessages">Browse byte messages</label>
+      <div class="controls col-md-5">
+        <select id="byteMessages" class="form-control" ng-model="activemqBrowseBytesMessages">
           <option value='99'>Off</option>
           <option value='8'>Decimal</option>
           <option value='4'>Hex</option>
@@ -40,6 +32,5 @@
         <span class="help-block">Browsing byte messages should display the message body as</span>
       </div>
     </div>
-
   </form>
 </div>

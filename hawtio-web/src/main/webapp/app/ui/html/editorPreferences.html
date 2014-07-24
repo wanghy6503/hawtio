@@ -1,10 +1,9 @@
 <div ng-controller="CodeEditor.PreferencesController">
   <form class="form-horizontal">
     <div class="form-group">
-      <label class="control-label" for="theme" title="The default theme to be used by the code editor">Theme</label>
-
-      <div class="controls">
-        <select id="theme" ng-model="preferences.theme">
+      <label class="control-label col-md-2" for="theme" title="The default theme to be used by the code editor">Theme</label>
+      <div class="controls col-md-5">
+        <select class="form-control" id="theme" ng-model="preferences.theme">
           <option value="default">Default</option>
           <option value="ambiance">Ambiance</option>
           <option value="blackboard">Blackboard</option>
@@ -21,10 +20,9 @@
 
   <form name="editorTabForm" class="form-horizontal">
     <div class="form-group">
-      <label class="control-label" for="tabSIze">Tab size</label>
-
-      <div class="controls">
-        <input type="number" id="tabSize" name="tabSize" ng-model="preferences.tabSize" ng-required="ng-required" min="1" max="10"/>
+      <label class="control-label col-md-2" for="tabSIze">Tab size</label>
+      <div class="controls col-md-5">
+        <input class="form-control" type="number" id="tabSize" name="tabSize" ng-model="preferences.tabSize" ng-required="ng-required" min="1" max="10" />
         <span class="help-block"
             ng-hide="editorTabForm.tabSize.$valid">Please specify correct size (1-10).</span>
       </div>
@@ -33,23 +31,21 @@
 
   <div compile="codeMirrorEx"></div>
 
-<!-- please do not change the tabs into spaces in the following script! -->
-<script type="text/ng-template" id="exampleText">
+  <!-- please do not change the tabs into spaces in the following script! -->
+  <script type="text/ng-template" id="exampleText">
 var foo = "World!";
 
 var myObject = {
-  message: "Hello",
-  getMessage: function() {
-    return message + " ";
-  }
+	message: "Hello",
+	getMessage: function() {
+		return message + " ";
+	}
 };
 
 window.alert(myObject.getMessage() + foo);
-</script>
+  </script>
 
-<script type="text/ng-template" id="codeMirrorExTemplate">
-  <div hawtio-editor="exampleText" mode="javascript"></div>
-</script>
-</div>
-
+  <script type="text/ng-template" id="codeMirrorExTemplate">
+    <div hawtio-editor="exampleText" mode="javascript" style="font-family: monospace"></div>
+  </script>
 </div>

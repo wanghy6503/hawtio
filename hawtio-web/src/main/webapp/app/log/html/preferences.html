@@ -1,9 +1,9 @@
 <div ng-controller="Log.PreferencesController">
 
   <form class="form-horizontal">
-    <label class="control-label">Sort ascending</label>
     <div class="form-group">
-      <div class="controls">
+      <label class="control-label col-md-2">Sort ascending</label>
+      <div class="controls col-md-5">
         <input type="checkbox" ng-model="logSortAsc">
         <span class="help-block">Ascending inserts new log lines in the bottom, descending inserts new log lines in the top</span>
       </div>
@@ -11,9 +11,9 @@
   </form>
 
   <form class="form-horizontal">
-    <label class="control-label">Auto scroll</label>
     <div class="form-group">
-      <div class="controls">
+      <label class="control-label col-md-2">Auto scroll</label>
+      <div class="controls col-md-5">
         <input type="checkbox" ng-model="logAutoScroll">
         <span class="help-block">Whether to automatic scroll window when new log lines are added</span>
       </div>
@@ -22,10 +22,9 @@
 
   <form class="form-horizontal">
     <div class="form-group">
-      <label class="control-label" for="logCacheSize" title="The number of log messages to keep in the browser">Log
-        cache size</label>
-      <div class="controls">
-        <input id="logCacheSize" type="number" ng-model="logCacheSize" min="0"/>
+      <label class="control-label col-md-2" for="logCacheSize" title="The number of log messages to keep in the browser">Log cache size</label>
+      <div class="controls col-md-5">
+        <input id="logCacheSize" class="form-control" type="number" ng-model="logCacheSize" min="0" />
       </div>
     </div>
 
