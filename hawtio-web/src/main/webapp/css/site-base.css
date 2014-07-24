@@ -4361,3 +4361,12 @@ body div div ul.nav {
 .slideout-body .prefs .nav.nav-pills a {
   cursor: pointer;
 }
+
+/*
+ * normally container-fluid class from Bootstrap3 has left/right padding = 15px
+ * adding both classes in html/layout*.html files will preserve Bootstrap3's container-fluid > row contract, but with smaller padding
+ */
+.container-fluid.container-layout {
+  padding-right: 0;
+  padding-left: 0;
+}
