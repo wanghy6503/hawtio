@@ -1,4 +1,4 @@
-<div ng-controller="Source.IndexController">
+<div ng-controller="Source.IndexController" class="container-fluid">
 
   <div class="logbar">
     <div class="wiki logbar-container">
@@ -15,8 +15,9 @@
   <div class="wiki-fixed row">
     <p></p>
     <p></p>
-    <div class="form-group inline-block">
-      <input class="form-control search-query input-xxlarge" type="text" ng-model="searchText" placeholder="Filter files...">
+    <div class="form-group section-filter">
+      <input class="form-control search-query input-sm" type="text" ng-model="searchText" placeholder="Filter files..." />
+      <i class="icon-remove clickable" title="Clear filter" ng-click="searchText = ''"></i>
     </div>
     <table>
       <tr ng-repeat="file in sourceFiles|filter:searchText">
