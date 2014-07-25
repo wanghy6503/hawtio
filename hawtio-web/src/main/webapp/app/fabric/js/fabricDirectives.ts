@@ -4,10 +4,10 @@ module Fabric {
   _module.directive('fabricVersionSelector', ["$templateCache", ($templateCache) => {
     return Fabric.VersionSelector($templateCache);
   }]);
-  _module.directive('fabricProfileSelector', () => {
+  _module.directive('fabricProfileSelector', [() => {
     return new Fabric.ProfileSelector();
-  });
-  _module.directive('fabricContainerList', () => {
+  }]);
+  _module.directive('fabricContainerList', [() => {
     return {
       restrict: 'A',
       replace: true,
@@ -16,11 +16,11 @@ module Fabric {
       controller: ["$scope", "$element", "$attrs", "jolokia", "$location", "workspace", "$templateCache", ContainerListDirectiveController],
       link: ["$scope", "$element", "$attrs", ContainerListDirectiveLink]
     }
-  });
-  _module.directive('fabricProfileDetails', () => {
+  }]);
+  _module.directive('fabricProfileDetails', [() => {
     return new Fabric.ProfileDetails();
-  });
-  _module.directive('fabricActiveProfileList', () => {
+  }]);
+  _module.directive('fabricActiveProfileList', [() => {
     return {
       restrict: 'A',
       replace: true,
@@ -29,7 +29,7 @@ module Fabric {
       controller: ["$scope", "$element", "$attrs", "jolokia", "$location", "workspace", "$templateCache", "$timeout", ActiveProfileListController],
       link: ["$scope", "$element", "$attrs", ContainerListDirectiveLink]
     }
-  });
+  }]);
   _module.directive('fabricProfileLink', ["workspace", "jolokia", "localStorage", (workspace, jolokia, localStorage) => {
     return {
         restrict: 'A',

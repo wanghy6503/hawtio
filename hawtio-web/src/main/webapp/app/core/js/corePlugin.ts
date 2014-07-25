@@ -276,8 +276,8 @@ hawtioPluginLoader.registerPreBootstrapTask((nextTask) => {
     Core._module.config([
       '$compileProvider',
       function ($compileProvider:ng.ICompileProvider) {
-        //$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
-        $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+        //$compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
         // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
       }
     ]);
