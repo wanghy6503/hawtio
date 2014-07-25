@@ -41,11 +41,6 @@
   </div>
 
   <div class="controller-section log-main" ng-show="logs.length > 0">
-
-    <!--
-    <div class="gridStyle" hawtio-datatable="gridOptions"></div>
-    -->
-
     <ul class="log-table" ng-class="isInDashboardClass()">
       <li class="table-head">
         <div>
@@ -68,17 +63,10 @@
             <a ng-href="{{logSourceHref(log)}}" ng-switch-when="true">{{log.logger}}</a>
             <span ng-switch-default>{{log.logger}}</span>
           </div>
-          <div class="title" ng-bind-html="log.message | highlight:searchText:caseSensitive"></div>
           <!--
-          <div class="expandable-body well">
-            {{log.message}}
-            <dl class="log-stack-trace" ng-hide="!log.exception">
-              <dt>Stack Trace:</dt>
-              <dd ng-bind-html="formatStackTrace(log.exception)"></dd>
-            </dl>
-
-          </div>
+          <div class="title" ng-bind-html="log.message | highlight:searchText:caseSensitive"></div>
           -->
+          <div class="title" ng-bind-html="log.message"></div>
         </div>
       </li>
     </ul>
