@@ -21,7 +21,8 @@ module UI {
         text: '=hawtioEditor',
         mode:  '=',
         outputEditor: '@',
-        name: '@'
+        name: '@',
+        config: '=?'
       },
 
       controller: ["$scope", "$element", "$attrs", ($scope, $element, $attrs) => {
@@ -142,6 +143,7 @@ module UI {
             var options:any = {
               value: $scope.text
             };
+            options = angular.extend(options, $scope.config);
 
             options = CodeEditor.createEditorSettings(options);
             $scope.codeMirror = CodeMirror.fromTextArea($element.find('textarea').get(0), options);
