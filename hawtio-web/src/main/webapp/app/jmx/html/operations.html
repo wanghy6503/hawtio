@@ -1,22 +1,17 @@
-<div  id="threadForm" ng-controller="Jmx.OperationsController">
+<div  id="threadForm" class="container-fluid" ng-controller="Jmx.OperationsController">
 
   <div class="row" ng-show="isOperationsEmpty()">
     The selected MBean has no JMX operations.
   </div>
 
   <div class="row" ng-hide="isOperationsEmpty() || showInvoke">
-    <form class="form-horizontal no-bottom-margin">
-      <fieldset>
-        <div class="form-group">
-          <input type="text"
-                 class="search-query form-control"
-                 ng-model="methodFilter"
-                 placeholder="Filter...">
-          </div>
-        </fieldset>
-      </form>
+    <form class="form">
+      <div class="form-group section-filter">
+        <input class="input-sm form-control search-query" type="text" ng-model="methodFilter" placeholder="Filter..." />
+        <i class="icon-remove clickable" title="Clear filter" ng-click="methodFilter = ''"></i>
+      </div>
+    </form>
   </div>
-
 
   <script type="text/ng-template" id="operationTemplate">
     <div>

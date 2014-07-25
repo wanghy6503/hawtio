@@ -8,7 +8,7 @@
 module Jmx {
 
   // IOperationControllerScope
-  _module.controller("Jmx.OperationController", ["$scope", "workspace", "jolokia", "$timeout", ($scope,
+  export var OperationsController = _module.controller("Jmx.OperationController", ["$scope", "workspace", "jolokia", "$timeout", ($scope,
                                       workspace:Workspace,
                                       jolokia,
                                       $timeout) => {

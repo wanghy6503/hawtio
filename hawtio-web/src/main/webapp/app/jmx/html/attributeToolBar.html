@@ -1,11 +1,6 @@
-<form class="form-horizontal no-bottom-margin">
-  <fieldset>
-    <div class="container-fluid">
-      <div class="form-group">
-        <div class="input-group-sm">
-          <input type="text" class="form-control search-query" ng-model="$parent.gridOptions.filterOptions.filterText" placeholder="Filter...">
-        </div>
-      </div>
-    </div>
-  </fieldset>
+<form class="form">
+  <div class="form-group section-filter">
+    <input class="input-sm form-control search-query" type="text" ng-model="$parent.gridOptions.filterOptions.filterText" placeholder="Filter..." />
+    <i class="icon-remove clickable" title="Clear filter" ng-click="$parent.gridOptions.filterOptions.filterText = ''"></i>
+  </div>
 </form>
