@@ -1,29 +1,33 @@
 <div class="controller-section" ng-controller="Karaf.ScrComponentsController">
-  <div class="row">
-    <div class="pull-left">
-      <form class="form-inline no-bottom-margin">
-        <fieldset>
-          <div class="form-group inline-block">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="pull-left">
+        <form class="form-inline">
+          <div class="form-group">
             <div class="btn-group">
-              <button ng-disabled="selectedComponents.length == 0" class="btn" ng-click="activate()"><i
-                      class="icon-play-circle"></i> Activate
+              <button ng-disabled="selectedComponents.length == 0" class="btn btn-default" ng-click="activate()">
+                <i class="icon-play-circle"></i> Activate
               </button>
-              <button ng-disabled="selectedComponents.length == 0" class="btn" ng-click="deactivate()"><i
-                      class="icon-off"></i> Deactivate
+              <button ng-disabled="selectedComponents.length == 0" class="btn btn-default" ng-click="deactivate()">
+                <i class="icon-off"></i> Deactivate
               </button>
             </div>
           </div>
-        </fieldset>
-      </form>
-    </div>
+        </form>
+      </div>
 
-    <div class="pull-right">
-      <input type="text" class="input-text search-query form-control" placeholder="Filter..." ng-model="scrOptions.filterOptions.filterText">
+      <div class="pull-right">
+        <div class="form-group section-filter">
+          <input class="input-sm form-control search-query" type="text" ng-model="scrOptions.filterOptions.filterText" placeholder="Filter..." />
+          <i class="icon-remove clickable" title="Clear filter" ng-click="scrOptions.filterOptions.filterText = ''"></i>
+        </div>
+      </div>
     </div>
   </div>
 
-
-  <div class="row">
-    <div class="gridStyle" ng-grid="scrOptions"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="gridStyle" ng-grid="scrOptions"></div>
+    </div>
   </div>
 </div>

@@ -4,7 +4,7 @@
 /// <reference path="./karafPlugin.ts"/>
 module Karaf {
 
-    _module.controller("Karaf.ScrComponentsController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace, jolokia) => {
+    export var ScrComponentsController = _module.controller("Karaf.ScrComponentsController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace, jolokia) => {
 
         $scope.component = empty();
 

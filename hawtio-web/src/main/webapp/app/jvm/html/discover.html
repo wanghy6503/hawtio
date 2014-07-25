@@ -3,7 +3,10 @@
   <div class="row">
 
     <div class="col-md-6 col-md-offset-3">
-      <input class="search-query form-control" type="text" ng-model="filter" placeholder="Filter...">
+      <div class="form-group section-filter">
+        <input class="input-sm form-control search-query" type="text" ng-model="filter" placeholder="Filter..." />
+        <i class="icon-remove clickable" title="Clear filter" ng-click="filter = ''"></i>
+      </div>
 
       <script type="text/ng-template" id="authPrompt">
         <div class="auth-form">

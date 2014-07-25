@@ -1,9 +1,11 @@
 <div class="controller-section" ng-controller="Karaf.FeaturesController">
 
-  <div class="row section-filter">
-    <input type="text" class="form-control search-query" placeholder="Filter..." ng-model="filter">
-    <i class="icon-remove clickable" title="Clear filter" ng-click="filter = ''"></i>
-  </div>
+  <form class="form">
+    <div class="form-group section-filter">
+      <input class="input-sm form-control search-query" type="text" ng-model="filter" placeholder="Filter..." />
+      <i class="icon-remove clickable" title="Clear filter" ng-click="filter = ''"></i>
+    </div>
+  </form>
 
   <script type="text/ng-template" id="popoverTemplate">
     <small>

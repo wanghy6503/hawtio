@@ -4,7 +4,7 @@
 /// <reference path="./karafPlugin.ts"/>
 module Karaf {
 
-  _module.controller("Karaf.FeaturesController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace, jolokia) => {
+  export var FeaturesController = _module.controller("Karaf.FeaturesController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace, jolokia) => {
 
     $scope.hasFabric = Fabric.hasFabric(workspace);
     $scope.responseJson = '';

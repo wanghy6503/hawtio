@@ -4,7 +4,7 @@
 /// <reference path="./jvmPlugin.ts"/>
 module JVM {
 
-  _module.controller("JVM.DiscoveryController", ["$scope", "localStorage", "jolokia", ($scope, localStorage, jolokia) => {
+  export var DiscoveryController = _module.controller("JVM.DiscoveryController", ["$scope", "localStorage", "jolokia", ($scope, localStorage, jolokia) => {
 
     $scope.discovering = true;
 
