@@ -1,8 +1,10 @@
-<div ng-controller="ActiveMQ.BrowseQueueController">
+<div ng-controller="ActiveMQ.BrowseQueueController" class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <input class="search-query form-control" type="text" ng-model="gridOptions.filterOptions.filterText"
-             placeholder="Filter messages">
+      <div class="form-group section-filter">
+        <input class="input-sm form-control search-query" type="text" ng-model="gridOptions.filterOptions.filterText" placeholder="Filter messages">
+        <i class="icon-remove clickable" title="Clear filter" ng-click="gridOptions.filterOptions.filterText = ''"></i>
+      </div>
     </div>
     <div class="col-md-6">
       <div class="pull-right">
