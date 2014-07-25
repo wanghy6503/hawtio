@@ -1,7 +1,7 @@
 /// <reference path="camelPlugin.ts"/>
 module Camel {
 
-    _module.controller("Camel.ProfileRouteController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
+    export var ProfileRouteController = _module.controller("Camel.ProfileRouteController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
 
         $scope.data = [];
         $scope.calcManually = true;

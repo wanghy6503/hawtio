@@ -3236,15 +3236,15 @@ tabset > .tabbable > ul {
 }
 /* end hack */
 
-tabset > .tabbable > .tab-content > .nav.nav-tabs > li {
+.nav.nav-tabs > li, tabset > .tabbable > .tab-content > .nav.nav-tabs > li {
   cursor: pointer;
 }
 
-tabset > .tabbable > .tab-content > .nav.nav-tabs > li.active {
+.nav.nav-tabs > li.active, tabset > .tabbable > .tab-content > .nav.nav-tabs > li.active {
   cursor: pointer;
 }
 
-tabset > .tabbable > .tab-content > .nav.nav-tabs > li.disabled {
+.nav.nav-tabs > li.disabled, tabset > .tabbable > .tab-content > .nav.nav-tabs > li.disabled {
   opacity: 0.3;
 }
 
@@ -4279,10 +4279,6 @@ ul.dynatree-container {
 .camel.tree-header > .left > .section-filter > .search-query {
   width: 100%;
   margin-bottom: 10px;
-}
-
-.camel.tree-header > .left > .section-filter > .icon-remove {
-  right: -16px;
 }
 
 .attributes-wrapper {

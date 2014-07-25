@@ -1,9 +1,9 @@
 /// <reference path="camelPlugin.ts"/>
 module Camel {
 
-   var DELIVERY_PERSISTENT = "2";
+  var DELIVERY_PERSISTENT = "2";
 
-  _module.controller("Camel.SendMessageController", ["$route", "$scope", "$element", "$timeout", "workspace", "jolokia", "localStorage", "$location", "activeMQMessage", ($route, $scope, $element, $timeout, workspace:Workspace, jolokia, localStorage, $location, activeMQMessage) => {
+  export var SendMessageController = _module.controller("Camel.SendMessageController", ["$route", "$scope", "$element", "$timeout", "workspace", "jolokia", "localStorage", "$location", "activeMQMessage", ($route, $scope, $element, $timeout, workspace:Workspace, jolokia, localStorage, $location, activeMQMessage) => {
     var log:Logging.Logger = Logger.get("Camel");
 
     log.info("Loaded page!");

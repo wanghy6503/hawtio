@@ -56,11 +56,11 @@
 
     <div class="row">
       <div class="pull-right">
-        <form class="form-inline no-bottom-margin">
+        <form class="form-inline">
           <fieldset>
-            <div class="form-group inline-block">
-              <input type="text" class="form-control search-query" placeholder="Filter..."
-                     ng-model="gridOptions.filterOptions.filterText">
+            <div class="form-group section-filter">
+              <input type="text" class="input-sm form-control search-query" placeholder="Filter..." ng-model="gridOptions.filterOptions.filterText" />
+              <i class="icon-remove clickable" title="Clear filter" ng-click="gridOptions.filterOptions.filterText = ''"></i>
             </div>
           </fieldset>
         </form>
