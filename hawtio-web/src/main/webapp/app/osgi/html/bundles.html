@@ -1,63 +1,65 @@
 <div class="controller-section" ng-controller="Osgi.BundlesController">
-  <div class="row">
-    <div class="pull-left">
-
-      <form class="form-inline no-bottom-margin">
-        <fieldset>
-
-          <div class="btn-group inline-block">
-            <a ng-href="#/osgi/bundle-list?p=container"
-                    type="button"
-                    class="btn"
-                    title="List view">
-              <i class="icon-list"></i>
-            </a>
-            <a ng-href="#/osgi/bundles?p=container"
-                    type="button"
-                    class="btn active"
-                    title="Table view">
-              <i class="icon-table"></i>
-            </a>
-          </div>
-
-          <div class="controls form-group inline-block controls-row">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="pull-left">
+        <form class="form-inline">
+          <div class="form-group">
             <div class="btn-group">
-              <button ng-disabled="selected.length == 0" class="btn" ng-click="stop()" title="Stop"><i class="icon-off"></i></button>
-              <button ng-disabled="selected.length == 0" class="btn" ng-click="start()" title="Start"><i class="icon-play-circle"></i></button>
-              <button ng-disabled="selected.length == 0" class="btn" ng-click="refresh()" title="Refresh"><i class="icon-refresh"></i></button>
-              <button ng-disabled="selected.length == 0" class="btn" ng-click="update()" title="Update"><i class="icon-cloud-download"></i></button>
-              <button ng-disabled="selected.length == 0" class="btn" ng-click="uninstall()" title="Uninstall"><i class="icon-eject"></i></button>
-            </div>
-            <div class="input-append">
-              <input class="input-xlarge" type="text" placeholder="Install Bundle..." ng-model="bundleUrl">
-              <button ng-disabled="installDisabled()" class="btn" ng-click="install()" title="Install"><i class="icon-ok"></i></button>
+              <a ng-href="#/osgi/bundle-list?p=container" type="button" class="btn btn-default" title="List view">
+                <i class="icon-list"></i>
+              </a>
+              <a ng-href="#/osgi/bundles?p=container" type="button" class="btn btn-default active" title="Table view">
+                <i class="icon-table"></i>
+              </a>
             </div>
           </div>
-        </fieldset>
-      </form>
-      
-    </div>
-
-    <div class="pull-right">
-      <form class="form-inline no-bottom-margin">
-        <fieldset>
-          <div class="form-group inline-block">
-            <input type="text"
-                   class="input-large form-control search-query"
-                   placeholder="Filter..."
-                   ng-model="gridOptions.filterOptions.filterText">
+          <div class="form-group">
+            <div class="btn-group">
+              <button ng-disabled="selected.length == 0" class="btn btn-default" ng-click="stop()" title="Stop">
+                <i class="icon-off"></i>
+              </button>
+              <button ng-disabled="selected.length == 0" class="btn btn-default" ng-click="start()" title="Start">
+                <i class="icon-play-circle"></i>
+              </button>
+              <button ng-disabled="selected.length == 0" class="btn btn-default" ng-click="refresh()" title="Refresh">
+                <i class="icon-refresh"></i>
+              </button>
+              <button ng-disabled="selected.length == 0" class="btn btn-default" ng-click="update()" title="Update">
+                <i class="icon-cloud-download"></i>
+              </button>
+              <button ng-disabled="selected.length == 0" class="btn btn-default" ng-click="uninstall()" title="Uninstall">
+                <i class="icon-eject"></i>
+              </button>
+            </div>
           </div>
-        </fieldset>
-      </form>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Install Bundle..." ng-model="bundleUrl" style="width: 350px" />
+              <span class="input-group-btn">
+                <button ng-disabled="installDisabled()" class="btn btn-default" ng-click="install()" title="Install">
+                  <i class="icon-ok"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
 
+      <div class="pull-right">
+        <form class="form-inline">
+          <div class="form-group section-filter">
+            <input type="text" class="input-sm form-control search-query" placeholder="Filter..." ng-model="gridOptions.filterOptions.filterText" />
+            <i class="icon-remove clickable" title="Clear filter" ng-click="gridOptions.filterOptions.filterText = ''"></i>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-  
-  
-  <div class="row">
-    <div ng-hide="loading" class="gridStyle" ng-grid="gridOptions"></div>
-    <div ng-show="loading">
-      Please wait, loading...
+
+    <div class="row">
+      <div ng-hide="loading" class="gridStyle" ng-grid="gridOptions"></div>
+      <div ng-show="loading">
+        Please wait, loading...
+      </div>
     </div>
   </div>
 </div>

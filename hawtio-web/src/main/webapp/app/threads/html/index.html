@@ -57,9 +57,10 @@
 
   <div class="wiki-fixed">
 
-    <div class="form-group">
-      <input class="form-control search-query" type="text" ng-model="searchFilter" placeholder="Filter...">
-    </div>
+  <div class="form-group section-filter">
+    <input class="input-sm form-control search-query" type="text" ng-model="searchFilter" placeholder="Filter..." />
+    <i class="icon-remove clickable" title="Clear filter" ng-click="searchFilter = ''"></i>
+  </div>
 
     <p></p>
 

@@ -9,7 +9,7 @@
   }
 
   ul.configurations {
-    margin: 0px 20px;
+    margin: 20px;
   }
 
   ul.configurations .bundle-item {
@@ -28,14 +28,16 @@
 
 <div class="controller-section" ng-controller="Osgi.ConfigurationsController">
   <div class="row">
-    <div class="configuration-header">
-      <div class="configuration-filter">
-        <input type="text" class="form-control search-query" placeholder="Filter..." ng-model="filterText">
+    <div class="col-md-10">
+      <div class="section-filter">
+        <input type="text" class="form-control input-sm search-query" placeholder="Filter..." ng-model="filterText" />
         <i class="icon-remove clickable" title="Clear filter" ng-click="filterText = ''"></i>
-        <button class="btn pull-right" ng-click="addPidDialog.open()" title="Add a new configuration"><i
-                class="icon-plus"></i> Configuration
-        </button>
       </div>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-default btn-sm pull-right" ng-click="addPidDialog.open()" title="Add a new configuration"><i
+          class="icon-plus"></i> Configuration
+      </button>
     </div>
   </div>
 
@@ -66,7 +68,7 @@
           <label class="control-label" for="newPid">New configuration ID</label>
 
           <div class="controls">
-            <input class="input-xlarge" type="text" id="newPid" ng-model="newPid"/>
+            <input class="input-xlarge" type="text" id="newPid" ng-model="newPid" />
           </div>
         </div>
       </div>
@@ -77,4 +79,3 @@
     </form>
   </div>
 </div>
-

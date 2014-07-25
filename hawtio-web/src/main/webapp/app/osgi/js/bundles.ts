@@ -4,7 +4,7 @@
 /// <reference path="./osgiPlugin.ts"/>
 module Osgi {
 
-  _module.controller("Osgi.BundlesController", ["$scope", "workspace", "jolokia", ($scope, workspace:Workspace, jolokia) => {
+  export var BundlesController =_module.controller("Osgi.BundlesController", ["$scope", "workspace", "jolokia", ($scope, workspace:Workspace, jolokia) => {
 
     $scope.result = {};
     $scope.bundles = [];

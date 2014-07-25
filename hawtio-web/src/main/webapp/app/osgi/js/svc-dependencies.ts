@@ -4,7 +4,7 @@
 /// <reference path="./osgiPlugin.ts"/>
 module Osgi {
 
-    _module.controller("Osgi.ServiceDependencyController", ["$scope", "$location", "$routeParams", "workspace", "osgiDataService", ($scope, $location, $routeParams, workspace:Workspace, osgiDataService: OsgiDataService) => {
+    export var ServiceDependencyController = _module.controller("Osgi.ServiceDependencyController", ["$scope", "$location", "$routeParams", "workspace", "osgiDataService", ($scope, $location, $routeParams, workspace:Workspace, osgiDataService: OsgiDataService) => {
 
         $scope.init = () => {
 

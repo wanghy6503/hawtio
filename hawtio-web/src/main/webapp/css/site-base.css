@@ -1528,8 +1528,6 @@ h4 > .contained {
 
 .section-filter {
   position: relative;
-  display: inline-block;
-  margin-left: 12px;
 }
 
 .active-profile-filter > .section-filter {
@@ -1551,7 +1549,7 @@ h4 > .contained {
 .section-filter .icon-remove {
   position: absolute;
   top: 7px;
-  right: 9px;
+  right: 6px;
 }
 
 .features-toolbar {
@@ -4381,6 +4379,10 @@ input.form-control.search-query, input.search-query {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
+}
+
+.row {
+  padding: 3px 0
 }
 
 /* /bootstrap 2.x -> 3.x compatibility */
