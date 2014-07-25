@@ -15,8 +15,10 @@
 <div ng-controller="JUnit.TreeController">
   <div class="row test-toolbar">
     <div class="col-md-8">
-      <input class="search-query form-control" type="text" ng-model="gridOptions.filterOptions.filterText"
-             placeholder="Filter tests">
+      <div class="form-group section-filter">
+        <input class="input-sm search-query form-control" type="text" ng-model="gridOptions.filterOptions.filterText" placeholder="Filter tests" />
+        <i class="icon-remove clickable" title="Clear filter" ng-click="gridOptions.filterOptions.filterText = ''"></i>
+      </div>
     </div>
     <div class="col-md-4">
       <div class="pull-right">

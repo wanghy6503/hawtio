@@ -1,29 +1,29 @@
-<div ng-controller="Infinispan.QueryController">
+<div ng-controller="Infinispan.QueryController" class="container-fluid">
   <div class="row">
-    <form class="form-inline no-bottom-margin">
-      <div class="form-group" style="text-align: center;">
-        <div class="controls inline-block" style="white-space: nowrap;">
-          <input class="search-query form-control" type="text" ng-model="sql"
-                 placeholder="InSQL statement..">
-
-          <button type="submit" class="btn" ng-disabled="!sql" ng-click="doQuery()"
-                  title="Perform the InSQL on the cache" data-placement="bottom">
+    <div clas="col-md-12">
+      <form class="form-inline">
+        <div class="form-group section-filter" style="text-align: center; white-space: nowrap">
+          <input class="input-sm search-query form-control" type="text" ng-model="sql" placeholder="InSQL statement.." style="width: 300px" />
+          <i class="icon-remove clickable" title="Clear filter" ng-click="sql = ''"></i>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" ng-disabled="!sql" ng-click="doQuery()" title="Perform the InSQL on the cache" data-placement="bottom">
             <i class="icon-search"></i> Execute
           </button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 
   <div class="row">
     <p>{{output}}</p>
   </div>
-<!--
-  <div class="row">
-    <div class="gridStyle" hawtio-datatable="gridOptions"></div>
-  </div>
+  <!--
+    <div class="row">
+      <div class="gridStyle" hawtio-datatable="gridOptions"></div>
+    </div>
 
-  <script type="text/ng-template" id="resultDetailTemplate">
-  </script>
--->
+    <script type="text/ng-template" id="resultDetailTemplate">
+    </script>
+  -->
 </div>

@@ -1,13 +1,11 @@
-<div class="controller-section" ng-controller="Maven.VersionsController">
+<div class="controller-section" ng-controller="Maven.VersionsController" class="container-fluid">
   <div class="row">
-    <form class="form-horizontal no-bottom-margin">
-      <fieldset>
-        <div class="form-group">
-          <input class="search-query form-control" type="text" ng-model="search"
-                 placeholder="Filter versions">
-        </div>
-      </fieldset>
-    </form>
+    <div class="col-md-12">
+      <div class="form-group section-filter">
+        <input class="input-sm search-query form-control" type="text" ng-model="search" placeholder="Filter versions" />
+        <i class="icon-remove clickable" title="Clear filter" ng-click="search = ''"></i>
+      </div>
+    </div>
   </div>
   <div class="row">
     <ng-include src="'app/maven/html/searchResults.html'"></ng-include>

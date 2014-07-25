@@ -1,12 +1,10 @@
-<div ng-controller="SimpleTableTestController">
+<div ng-controller="SimpleTableTestController" class="container-fluid">
   <div class="row">
-    <div class="section-header">
-
+    <div class="section-header form-group">
       <div class="section-filter">
-        <input type="text" class="form-control search-query" placeholder="Filter..." ng-model="mygrid.filterOptions.filterText">
+        <input type="text" class="input-sm form-control search-query" placeholder="Filter..." ng-model="mygrid.filterOptions.filterText" />
         <i class="icon-remove clickable" title="Clear filter" ng-click="mygrid.filterOptions.filterText = ''"></i>
       </div>
-
     </div>
   </div>
 
@@ -21,11 +19,10 @@
     </ul>
 
     <p>
-       <a class="btn" href="#/datatable/test?multi={{!mygrid.multiSelect}}">multi select is: {{mygrid.multiSelect}}</a>
+      <a class="btn" href="#/datatable/test?multi={{!mygrid.multiSelect}}">multi select is: {{mygrid.multiSelect}}</a>
     </p>
   </div>
 </div>
-
 
 <script type="text/javascript">
   function SimpleTableTestController($scope, $location) {
