@@ -4321,7 +4321,8 @@ ul.dynatree-container {
     width: 260px;
 }
 .config-admin-form .form-horizontal .controls {
-    margin-left: 280px;
+  margin-left: 280px;
+}
 
 /* bootstrap 2.x -> 3.x compatibility */
 

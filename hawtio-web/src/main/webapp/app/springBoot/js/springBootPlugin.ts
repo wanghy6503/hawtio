@@ -5,7 +5,7 @@
 module SpringBoot {
 
     var pluginName = 'springBoot';
-    export var _module = angular.module(pluginName, ['bootstrap', 'ngResource', 'ui.bootstrap.dialog', 'hawtioCore']);
+    export var _module = angular.module(pluginName, ['ui.bootstrap', 'ngResource', 'ui.bootstrap.modal', 'hawtioCore']);
     _module.config(["$routeProvider", ($routeProvider) => {
         $routeProvider.
             when('/springBoot/metrics', {templateUrl: 'app/springBoot/html/metrics.html'}).

@@ -6,7 +6,7 @@ module FabricDeploy {
   export var pluginName = 'fabric-deploy';
   export var templatePath = 'app/fabric-deploy/html/';
 
-  export var _module = angular.module(pluginName, ['bootstrap', 'fabric']);
+  export var _module = angular.module(pluginName, ['ui.bootstrap', 'fabric']);
 
   _module.config(['$routeProvider', ($routeProvider) => {
     $routeProvider
