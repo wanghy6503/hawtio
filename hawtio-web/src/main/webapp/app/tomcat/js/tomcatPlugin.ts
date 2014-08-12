@@ -9,10 +9,10 @@ module Tomcat {
 
   _module.config(["$routeProvider", ($routeProvider) => {
     $routeProvider.
-            when('/tomcat/server', {templateUrl: 'app/tomcat/html/server.html'}).
-            when('/tomcat/applications', {templateUrl: 'app/tomcat/html/applications.html'}).
-            when('/tomcat/connectors', {templateUrl: 'app/tomcat/html/connectors.html'}).
-            when('/tomcat/sessions', {templateUrl: 'app/tomcat/html/sessions.html'});
+        when('/tomcat/server', {templateUrl: 'app/tomcat/html/server.html'}).
+        when('/tomcat/applications', {templateUrl: 'app/tomcat/html/applications.html'}).
+        when('/tomcat/connectors', {templateUrl: 'app/tomcat/html/connectors.html'}).
+        when('/tomcat/sessions', {templateUrl: 'app/tomcat/html/sessions.html'});
   }]);
 
   _module.filter('tomcatIconClass', () => iconClass);
@@ -22,7 +22,7 @@ module Tomcat {
     viewRegistry['tomcat'] = "app/tomcat/html/layoutTomcatTabs.html";
     helpRegistry.addUserDoc('tomcat', 'app/tomcat/doc/help.md', () => {
       return workspace.treeContainsDomainAndProperties("Tomcat") ||
-              workspace.treeContainsDomainAndProperties("Catalina")
+          workspace.treeContainsDomainAndProperties("Catalina")
     });
 
     workspace.topLevelTabs.push({
