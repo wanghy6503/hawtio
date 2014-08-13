@@ -1,4 +1,4 @@
-<div class="row" ng-controller="Jetty.ConnectorsController">
+<div class="container-fluid" ng-controller="Jetty.ConnectorsController">
 
   <div class="row">
 
@@ -8,10 +8,10 @@
           <div class="controls form-group inline-block controls-row">
             <div class="btn-group">
               <button ng-disabled="selected.length == 0 || everySelectionIsRunning()"
-                      class="btn" ng-click="start()" title="Start"> <i class="icon-play-circle"></i> </button>
+                  class="btn" ng-click="start()" title="Start"><i class="icon-play-circle"></i></button>
               <button ng-disabled="selected.length == 0 || !anySelectionIsRunning()"
-                      class="btn" ng-click="stop()" title="Stop"> <i class="icon-off"></i></button>
-              
+                  class="btn" ng-click="stop()" title="Stop"><i class="icon-off"></i></button>
+
             </div>
           </div>
         </fieldset>
@@ -19,20 +19,20 @@
 
     </div>
 
-        <div class="pull-right">
-            <form class="form-inline no-bottom-margin">
-                <fieldset>
-                    <div class="form-group inline-block">
-                        <input type="text" class="form-control search-query" placeholder="Filter..." ng-model="gridOptions.filterOptions.filterText">
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+    <div class="pull-right">
+      <form class="form-inline no-bottom-margin">
+        <fieldset>
+          <div class="form-group section-filter">
+            <input type="text" class="input-sm form-control search-query" placeholder="Filter..." ng-model="gridOptions.filterOptions.filterText">
+            <i class="icon-remove clickable" title="Clear filter" ng-click="gridOptions.filterOptions.filterText = ''"></i>
+          </div>
+        </fieldset>
+      </form>
     </div>
+  </div>
 
-    <div class="row">
-        <div class="gridStyle" ng-grid="gridOptions"></div>
-    </div>
+  <div class="row">
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+  </div>
 
 </div>
-

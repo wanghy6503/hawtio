@@ -4,7 +4,7 @@
 /// <reference path="./jettyPlugin.ts"/>
 module Jetty {
 
-  _module.controller("Jetty.ThreadPoolsController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
+  export var ThreadPoolsController = _module.controller("Jetty.ThreadPoolsController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
 
     var stateTemplate = '<div class="ngCellText pagination-centered" title="{{row.getProperty(col.field)}}"><i class="{{row.getProperty(col.field) | jettyIconClass}}"></i></div>';
 
@@ -86,12 +86,12 @@ module Jetty {
       }
 
       // create structure for each response
-      angular.forEach(response, function (value, key) {
+      angular.forEach(response, function(value, key) {
         var mbean = value;
         jolokia.request({type: "read", mbean: mbean, attribute: []}, onSuccess(onAttributes));
       });
       Core.$apply($scope);
-    };
+    }
 
     $scope.$on('jmxTreeUpdated', reloadFunction);
     $scope.$watch('workspace.tree', reloadFunction);

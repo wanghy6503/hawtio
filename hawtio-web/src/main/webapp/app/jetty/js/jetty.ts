@@ -4,18 +4,18 @@
 /// <reference path="./jettyPlugin.ts"/>
 module Jetty {
 
-  _module.controller("Jetty.JettyController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
+  export var JettyController = _module.controller("Jetty.JettyController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
 
     var stateTemplate = '<div class="ngCellText pagination-centered" title="{{row.getProperty(col.field)}}">' +
         '<i class="{{row.getProperty(col.field) | jettyIconClass}}"></i>' +
-      '</div>';
+        '</div>';
     var urlTemplate = '<div class="ngCellText" title="{{row.getProperty(col.field)}}">' +
         '<a ng-href="{{row.getProperty(col.field)}}" target="_blank">{{row.getProperty(col.field)}}</a>' +
-      '</div>';
+        '</div>';
 
-    $scope.uninstallDialog = new UI.Dialog()
+    $scope.uninstallDialog = new UI.Dialog();
 
-    $scope.httpPort;
+    $scope.httpPort = undefined;
     $scope.httpScheme = "http";
 
     $scope.webapps = [];
@@ -67,9 +67,9 @@ module Jetty {
     };
 
     // function to control the web applications
-    $scope.controlWebApps = function (op) {
+    $scope.controlWebApps = function(op) {
       // grab id of mbean names to control
-      var mbeanNames = $scope.selected.map(function (b) {
+      var mbeanNames = $scope.selected.map(function(b) {
         return b.mbean
       });
       if (!angular.isArray(mbeanNames)) {
@@ -81,24 +81,24 @@ module Jetty {
       angular.forEach(mbeanNames, (mbean, idx) => {
         var onResponse = (idx >= lastIndex) ? $scope.onLastResponse : $scope.onResponse;
         jolokia.request({
-                  type: 'exec',
-                  mbean: mbean,
-                  operation: op,
-                  arguments: null
-                },
-                onSuccess(onResponse, {error: onResponse}));
+              type: 'exec',
+              mbean: mbean,
+              operation: op,
+              arguments: null
+            },
+            onSuccess(onResponse, {error: onResponse}));
       });
     };
 
-    $scope.stop = function () {
+    $scope.stop = function() {
       $scope.controlWebApps('stop');
     };
 
-    $scope.start = function () {
+    $scope.start = function() {
       $scope.controlWebApps('start');
     };
 
-    $scope.uninstall = function () {
+    $scope.uninstall = function() {
       $scope.controlWebApps('destroy');
       $scope.uninstallDialog.close();
     };
@@ -114,13 +114,13 @@ module Jetty {
     };
 
     // function to trigger reloading page
-    $scope.onLastResponse = function (response) {
+    $scope.onLastResponse = function(response) {
       $scope.onResponse(response);
       // we only want to force updating the data on the last response
       loadData();
     };
 
-    $scope.onResponse = function (response) {
+    $scope.onResponse = function(response) {
       //console.log("got response: " + response);
     };
 
@@ -131,14 +131,13 @@ module Jetty {
     $scope.jettyServerVersion = "";
     $scope.jettyServerStartupTime = "";
 
-    var servers = jolokia.search("org.eclipse.jetty.server:type=server,*")
+    var servers = jolokia.search("org.eclipse.jetty.server:type=server,*");
     if (servers && servers.length === 1) {
-      $scope.jettyServerVersion = jolokia.getAttribute(servers[0], "version")
+      $scope.jettyServerVersion = jolokia.getAttribute(servers[0], "version");
       $scope.jettyServerStartupTime = jolokia.getAttribute(servers[0], "startupTime")
     } else {
       console.log("Cannot find jetty server or there was more than one server. response is: " + servers)
     }
-
 
     function reloadFunction() {
       // if the JMX tree is reloaded its probably because a new MBean has been added or removed
@@ -157,7 +156,7 @@ module Jetty {
       }
       if (connectors) {
         var found = false;
-        angular.forEach(connectors, function (key, value) {
+        angular.forEach(connectors, function(key, value) {
           var mbean = key;
           if (!found) {
             var data = jolokia.request({type: "read", mbean: mbean, attribute: ["port", "protocols"]});
@@ -207,7 +206,7 @@ module Jetty {
         }
       }
 
-      angular.forEach(response, function (value, key) {
+      angular.forEach(response, function(value, key) {
         var mbean = value;
         jolokia.request({type: "read", mbean: mbean, attribute: []}, onSuccess(onAttributes));
       });

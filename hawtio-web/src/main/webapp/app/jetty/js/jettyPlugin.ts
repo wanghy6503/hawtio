@@ -9,13 +9,13 @@ module Jetty {
 
   _module.config(["$routeProvider", ($routeProvider) => {
     $routeProvider.
-            when('/jetty/server', {templateUrl: 'app/jetty/html/server.html'}).
-            when('/jetty/applications', {templateUrl: 'app/jetty/html/applications.html'}).
-            when('/jetty/connectors', {templateUrl: 'app/jetty/html/connectors.html'}).
-            when('/jetty/threadpools', {templateUrl: 'app/jetty/html/threadpools.html'});
+        when('/jetty/server', {templateUrl: 'app/jetty/html/server.html'}).
+        when('/jetty/applications', {templateUrl: 'app/jetty/html/applications.html'}).
+        when('/jetty/connectors', {templateUrl: 'app/jetty/html/connectors.html'}).
+        when('/jetty/threadpools', {templateUrl: 'app/jetty/html/threadpools.html'});
   }]);
 
-  _module.filter('jettyIconClass',() => iconClass);
+  _module.filter('jettyIconClass', () => iconClass);
 
   _module.run(["$location", "workspace", "viewRegistry", "helpRegistry", ($location:ng.ILocationService, workspace:Workspace, viewRegistry, helpRegistry) => {
 

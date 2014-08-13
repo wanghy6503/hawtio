@@ -4,7 +4,7 @@
 /// <reference path="./jettyPlugin.ts"/>
 module Jetty {
 
-  _module.controller("Jetty.ConnectorsController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
+  export var ConnectorsController = _module.controller("Jetty.ConnectorsController", ["$scope", "$location", "workspace", "jolokia", ($scope, $location, workspace:Workspace, jolokia) => {
 
     var stateTemplate = '<div class="ngCellText pagination-centered" title="{{row.getProperty(col.field)}}"><i class="{{row.getProperty(col.field) | jettyIconClass}}"></i></div>';
 
@@ -111,7 +111,7 @@ module Jetty {
           obj.mbean = response.request.mbean;
           obj.protocols = "[http]";
           obj.default = "http";
-          obj.port = obj.port;
+          obj.port = undefined;
           obj.running = obj['running'] !== undefined ? obj['running'] : true;
           $scope.connectors.push(obj);
           if (obj.confidentialPort) {
@@ -122,7 +122,7 @@ module Jetty {
               port: obj.confidentialPort,
               running: obj.running,
               mbean: obj.mbean
-            }
+            };
             $scope.connectors.push(copyObj);
           }
           Core.$apply($scope);
@@ -135,7 +135,7 @@ module Jetty {
         jolokia.request({type: "read", mbean: mbean, attribute: []}, onSuccess(onAttributes));
       });
       Core.$apply($scope);
-    };
+    }
 
     function render9(response) {
       $scope.connectors = [];
@@ -147,7 +147,7 @@ module Jetty {
           obj.mbean = response.request.mbean;
           obj.protocols = obj['protocols'];
           obj.default = obj['defaultProtocol'];
-          obj.port = obj.port;
+          obj.port = undefined;
           obj.running = obj['state'] == "STARTED";
           $scope.connectors.push(obj);
           Core.$apply($scope);
@@ -160,7 +160,7 @@ module Jetty {
         jolokia.request({type: "read", mbean: mbean, attribute: []}, onSuccess(onAttributes));
       });
       Core.$apply($scope);
-    };
+    }
 
     // function to trigger reloading page
     $scope.onLastResponse = function (response) {
