@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-12 page-padded container-list-main">
 
-      <div class="section-header">
+      <div class="section-header form-inline">
 
         <div class="selection-controls">
           <i class="icon-circle-blank clickable" title="Clear selection" ng-click="selectNone(containers)"></i>
@@ -12,7 +12,7 @@
 
         <div class="section-title"></div>
 
-        <div class="section-controls">
+        <div class="section-controls ">
           <span class="inline-block"
                 ng-show="selectedContainers.length != 0">
                 <div hawtio-drop-down="locationMenu"></div>
@@ -52,8 +52,8 @@
           </a>
         </div>
 
-        <div class="section-filter">
-          <input type="text" class="form-control search-query" placeholder="Filter..." ng-model="containerIdFilter">
+        <div class="form-group section-filter">
+          <input type="text" class="input-sm form-control search-query" placeholder="Filter..." ng-model="containerIdFilter">
           <i class="icon-remove clickable" title="Clear filter" ng-click="containerIdFilter = ''"></i>
         </div>
       </div>
