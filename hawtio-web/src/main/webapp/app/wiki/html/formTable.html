@@ -26,9 +26,9 @@
     </div>
   </div>
 
-  <div class="wiki-fixed row">
-    <input class="search-query form-control" type="text" ng-model="gridOptions.filterOptions.filterText"
-           placeholder="Filter...">
+  <div class="wiki-fixed row form-group section-filter">
+    <input class="input-sm search-query form-control" type="text" ng-model="gridOptions.filterOptions.filterText" placeholder="Filter..." />
+    <i class="icon-remove clickable" title="Clear filter" ng-click="gridOptions.filterOptions.filterText = ''"></i>
   </div>
 
   <div class="form-horizontal">
