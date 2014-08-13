@@ -45,6 +45,7 @@ module Core {
 
   // configure the module
   _module.config(["$locationProvider", "$routeProvider", "$modalProvider", ($locationProvider: ng.ILocationProvider, $routeProvider:ng.route.IRouteProvider, $dialogProvider) => {
+    $locationProvider.html5Mode(true);
     $dialogProvider.options.backdrop = true;
     $dialogProvider.options.keyboard = true;
 
