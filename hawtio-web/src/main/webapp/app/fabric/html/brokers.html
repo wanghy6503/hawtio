@@ -8,7 +8,11 @@
         <i class="icon-remove clickable" title="Clear filter" ng-click="searchFilter = ''"></i>
       </div>
 
+
       <div class="section-controls">
+        <a href="" title="Select version">
+          Version <div fabric-version-selector="selectedVersion"></div>
+        </a>
         <a href="" title="Create a new broker configuration" ng-click="createBroker(null)">
           <i class="icon-plus"></i> Broker
         </a>
@@ -24,7 +28,7 @@
   </div>
 
   <div class="hero-unit" ng-show="groups.length < 1">
-    <p>There are no brokers configured in this Fabric.</p>
+    <p>There are no brokers configured (with version {{selectedVersion.id}}) in this Fabric.</p>
 
     <button class="btn btn-primary btn-large" ng-click="createBroker(null)">Create broker configuration</button>
   </div>

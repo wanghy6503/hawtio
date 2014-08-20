@@ -4,6 +4,10 @@ module Fabric {
 
     Fabric.initScope($scope, $location, jolokia, workspace);
 
+    $scope.selectedVersion = {
+      id: "1.0"
+    };
+
     $scope.maps = {
       group: {},
       profile: {},
@@ -69,9 +73,23 @@ module Fabric {
               (container.master && $scope.searchFilter && $scope.searchFilter.has("master"));
     };
 
-    if (Fabric.hasMQManager) {
-      Core.register(jolokia, $scope, {type: 'exec', mbean: Fabric.mqManagerMBean, operation: "loadBrokerStatus()"}, onSuccess(onBrokerData));
-    }
+    var unreg:() => void = null;
+
+    $scope.$watch('selectedVersion.id', (newValue, oldValue) => {
+      if (Fabric.hasMQManager) {
+        if (!Core.isBlank(newValue)) {
+          if (unreg) {
+            unreg();
+          }
+          unreg = <() => void>Core.registerForChanges(jolokia, $scope, {
+            type: 'exec',
+            mbean: Fabric.mqManagerMBean,
+            operation: 'loadBrokerStatus(java.lang.String)',
+            arguments: [newValue]
+          }, onBrokerData);
+        }
+      }
+    });
 
     function onBrokerData(response) {
 
